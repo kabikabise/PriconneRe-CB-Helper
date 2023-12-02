@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Priconne Re: CB Helper</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./cbhelper.css">
+  <link rel="stylesheet" href="./charas.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+  <script async src="./javascript/index.js"></script>
+
+</head>
+<body>
+
+
+<!--
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+      </button>
+      <a class="navbar-brand" href="#">Princess Connect CB Helper</a>
+    </div>
+  </div>
+</nav>
+-->
+<div class="container-fluid text-center">
+  <div class="row content">
+  <br>
+
+    <div>
+      <div class="teambox_center">
+        <div class="teambox">
+          <input onclick="set_team1()" id="team1_title" class="teambox_title_selected team_input" value="Team 1"/>
+          <div class="teambox_container">
+            <div onclick="set_team1()" id="team1" class="teambox_inner_selected">
+              <div class="teambox_inner_container">
+                <div id="t1_0" class="teambox_empty"></div>
+                <div id="t1_1" class="teambox_empty"></div>
+                <div id="t1_2" class="teambox_empty"></div>
+                <div id="t1_3" class="teambox_empty"></div>
+              </div>
+            </div>
+            <div class="box_pad"><div class="vl"></div></div>
+            <div onclick="set_support1()" id="team1_support" class="teambox_inner">
+              <div class="teambox_inner_container">
+                <div id="t1_s" class="teambox_empty"></div>
+              </div>
+            </div>
+            <div onclick="set_support1()" id="team1_support_title" class="teambox_title">Support</div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="teambox_center">
+        <div class="teambox">
+          <input onclick="set_team2()" id="team2_title" class="teambox_title team_input" value="Team 2"/>
+          <div class="teambox_container">
+            <div onclick="set_team2()" id="team2" class="teambox_inner">
+              <div class="teambox_inner_container">
+                <div id="t2_0" class="teambox_empty"></div>
+                <div id="t2_1" class="teambox_empty"></div>
+                <div id="t2_2" class="teambox_empty"></div>
+                <div id="t2_3" class="teambox_empty"></div>
+              </div>
+            </div>
+            <div class="box_pad"><div class="vl"></div></div>
+            <div onclick="set_support2()" id="team2_support" class="teambox_inner">
+              <div class="teambox_inner_container">
+                <div id="t2_s" class="teambox_empty"></div>
+              </div>
+            </div>
+            <div onclick="set_support2()" id="team2_support_title" class="teambox_title">Support</div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="teambox_center">
+        <div class="teambox">
+          <input onclick="set_team3()" id="team3_title" class="teambox_title team_input" value="Team 3"/>
+          <div class="teambox_container">
+            <div onclick="set_team3()" id="team3" class="teambox_inner">
+              <div class="teambox_inner_container">
+                <div id="t3_0" class="teambox_empty"></div>
+                <div id="t3_1" class="teambox_empty"></div>
+                <div id="t3_2" class="teambox_empty"></div>
+                <div id="t3_3" class="teambox_empty"></div>
+              </div>
+            </div>
+            <div class="box_pad"><div class="vl"></div></div>
+            <div onclick="set_support3()" id="team3_support" class="teambox_inner">
+              <div class="teambox_inner_container">
+                <div id="t3_s" class="teambox_empty"></div>
+              </div>
+            </div>
+            <div onclick="set_support3()" id="team3_support_title" class="teambox_title">Support</div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <div class="center_panel">
+        <button onclick="set_clear()" class="clear_button">Clear</button>
+      </div>
+
+      <br>
+
+
+        <div class="center_panel">
+          <div class="panel-group">
+           <div class="panel panel-default">
+             <a data-toggle="collapse" href="#collapse1">
+               <div class="panel-heading leftflex">
+                <div class="frontline"></div>
+                <h4 class="panel-title">Front</h4>
+               </div>
+             </a>
+             <div id="collapse1" class="panel-collapse collapse">
+<div onclick="set_unit('リマ')" id='リマ' class='u_リマ unit u_default'></div> <div onclick="set_unit('ミヤコ')" id='ミヤコ' class='u_ミヤコ unit u_default'></div> <div onclick="set_unit('クウカ')" id='クウカ' class='u_クウカ unit u_default'></div> <div onclick="set_unit('クウカ（サマー）')" id='クウカ（サマー）' class='u_クウカ（サマー） unit u_default'></div> <div onclick="set_unit('ジュン')" id='ジュン' class='u_ジュン unit u_default'></div> <div onclick="set_unit('ムイミ（ニューイヤー）')" id='ムイミ（ニューイヤー）' class='u_ムイミ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('クウカ（オーエド）')" id='クウカ（オーエド）' class='u_クウカ（オーエド） unit u_default'></div> <div onclick="set_unit('クウカ（ノワール）')" id='クウカ（ノワール）' class='u_クウカ（ノワール） unit u_default'></div> <div onclick="set_unit('ジュン（クリスマス）')" id='ジュン（クリスマス）' class='u_ジュン（クリスマス） unit u_default'></div> <div onclick="set_unit('カオリ')" id='カオリ' class='u_カオリ unit u_default'></div> <div onclick="set_unit('サレン（クリスマス）')" id='サレン（クリスマス）' class='u_サレン（クリスマス） unit u_default'></div> <div onclick="set_unit('ツムギ（ハロウィン）')" id='ツムギ（ハロウィン）' class='u_ツムギ（ハロウィン） unit u_default'></div> <div onclick="set_unit('レイ（ニューイヤー）')" id='レイ（ニューイヤー）' class='u_レイ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('リン（デレマス）')" id='リン（デレマス）' class='u_リン（デレマス） unit u_default'></div> <div onclick="set_unit('ペコリーヌ')" id='ペコリーヌ' class='u_ペコリーヌ unit u_default'></div> <div onclick="set_unit('ペコリーヌ（プリンセス）')" id='ペコリーヌ（プリンセス）' class='u_ペコリーヌ（プリンセス） unit u_default'></div> <div onclick="set_unit('カオリ（ハロウィン）')" id='カオリ（ハロウィン）' class='u_カオリ（ハロウィン） unit u_default'></div> <div onclick="set_unit('ルカ（サラサリア）')" id='ルカ（サラサリア）' class='u_ルカ（サラサリア） unit u_default'></div> <div onclick="set_unit('ルカ')" id='ルカ' class='u_ルカ unit u_default'></div> <div onclick="set_unit('コッコロ（ニューイヤー）')" id='コッコロ（ニューイヤー）' class='u_コッコロ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('ユカリ（サマー）')" id='ユカリ（サマー）' class='u_ユカリ（サマー） unit u_default'></div> <div onclick="set_unit('ノゾミ')" id='ノゾミ' class='u_ノゾミ unit u_default'></div> <div onclick="set_unit('ムイミ')" id='ムイミ' class='u_ムイミ unit u_default'></div> <div onclick="set_unit('シズル（サマー）')" id='シズル（サマー）' class='u_シズル（サマー） unit u_default'></div> <div onclick="set_unit('ペコリーヌ（オーバーロード）')" id='ペコリーヌ（オーバーロード）' class='u_ペコリーヌ（オーバーロード） unit u_default'></div> <div onclick="set_unit('マコト')" id='マコト' class='u_マコト unit u_default'></div> <div onclick="set_unit('マコト（シンデレラ）')" id='マコト（シンデレラ）' class='u_マコト（シンデレラ） unit u_default'></div> <div onclick="set_unit('カヤ')" id='カヤ' class='u_カヤ unit u_default'></div> <div onclick="set_unit('カヤ（タイムトラベル）')" id='カヤ（タイムトラベル）' class='u_カヤ（タイムトラベル） unit u_default'></div> <div onclick="set_unit('ヒヨリ（ニューイヤー）')" id='ヒヨリ（ニューイヤー）' class='u_ヒヨリ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('カヤ（リベレイター）')" id='カヤ（リベレイター）' class='u_カヤ（リベレイター） unit u_default'></div> <div onclick="set_unit('リマ（シンデレラ）')" id='リマ（シンデレラ）' class='u_リマ（シンデレラ） unit u_default'></div> <div onclick="set_unit('ニノン（オーエド）')" id='ニノン（オーエド）' class='u_ニノン（オーエド） unit u_default'></div> <div onclick="set_unit('マコト（サマー）')" id='マコト（サマー）' class='u_マコト（サマー） unit u_default'></div> <div onclick="set_unit('アキノ')" id='アキノ' class='u_アキノ unit u_default'></div> <div onclick="set_unit('ジュン（サマー）')" id='ジュン（サマー）' class='u_ジュン（サマー） unit u_default'></div> <div onclick="set_unit('マツリ（ワイルド）')" id='マツリ（ワイルド）' class='u_マツリ（ワイルド） unit u_default'></div> <div onclick="set_unit('クロエ（聖学祭）')" id='クロエ（聖学祭）' class='u_クロエ（聖学祭） unit u_default'></div> <div onclick="set_unit('マツリ')" id='マツリ' class='u_マツリ unit u_default'></div> <div onclick="set_unit('クロエ')" id='クロエ' class='u_クロエ unit u_default'></div> <div onclick="set_unit('マツリ（ハロウィン）')" id='マツリ（ハロウィン）' class='u_マツリ（ハロウィン） unit u_default'></div> <div onclick="set_unit('エリコ（バレンタイン）')" id='エリコ（バレンタイン）' class='u_エリコ（バレンタイン） unit u_default'></div> <div onclick="set_unit('アキノ（クリスマス）')" id='アキノ（クリスマス）' class='u_アキノ（クリスマス） unit u_default'></div> <div onclick="set_unit('シズル（ノワール）')" id='シズル（ノワール）' class='u_シズル（ノワール） unit u_default'></div> <div onclick="set_unit('アヤネ（クリスマス）')" id='アヤネ（クリスマス）' class='u_アヤネ（クリスマス） unit u_default'></div> <div onclick="set_unit('ルカ（サマー）')" id='ルカ（サマー）' class='u_ルカ（サマー） unit u_default'></div> <div onclick="set_unit('ルカ（ニューイヤー）')" id='ルカ（ニューイヤー）' class='u_ルカ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('ツムギ')" id='ツムギ' class='u_ツムギ unit u_default'></div> <div onclick="set_unit('イノリ')" id='イノリ' class='u_イノリ unit u_default'></div> <div onclick="set_unit('ヒヨリ（プリンセス）')" id='ヒヨリ（プリンセス）' class='u_ヒヨリ（プリンセス） unit u_default'></div> <div onclick="set_unit('ヒヨリ')" id='ヒヨリ' class='u_ヒヨリ unit u_default'></div> <div onclick="set_unit('ミソギ')" id='ミソギ' class='u_ミソギ unit u_default'></div> <div onclick="set_unit('アヤネ')" id='アヤネ' class='u_アヤネ unit u_default'></div> <div onclick="set_unit('ミソギ（ハロウィン）')" id='ミソギ（ハロウィン）' class='u_ミソギ（ハロウィン） unit u_default'></div> <div onclick="set_unit('タマキ')" id='タマキ' class='u_タマキ unit u_default'></div> <div onclick="set_unit('タマキ（作業服）')" id='タマキ（作業服）' class='u_タマキ（作業服） unit u_default'></div> <div onclick="set_unit('トモ')" id='トモ' class='u_トモ unit u_default'></div> <div onclick="set_unit('ムイミ（リベレイター）')" id='ムイミ（リベレイター）' class='u_ムイミ（リベレイター） unit u_default'></div> <div onclick="set_unit('チエル')" id='チエル' class='u_チエル unit u_default'></div> <div onclick="set_unit('チエル（聖学祭）')" id='チエル（聖学祭）' class='u_チエル（聖学祭） unit u_default'></div> <div onclick="set_unit('アキノ（サマー）')" id='アキノ（サマー）' class='u_アキノ（サマー） unit u_default'></div> <div onclick="set_unit('タマキ（サマー）')" id='タマキ（サマー）' class='u_タマキ（サマー） unit u_default'></div> <div onclick="set_unit('エリコ')" id='エリコ' class='u_エリコ unit u_default'></div> <div onclick="set_unit('ペコリーヌ（サマー）')" id='ペコリーヌ（サマー）' class='u_ペコリーヌ（サマー） unit u_default'></div> <div onclick="set_unit('ミソギ（サマー）')" id='ミソギ（サマー）' class='u_ミソギ（サマー） unit u_default'></div> <div onclick="set_unit('クリスティーナ（ワイルド）')" id='クリスティーナ（ワイルド）' class='u_クリスティーナ（ワイルド） unit u_default'></div> <div onclick="set_unit('クルミ')" id='クルミ' class='u_クルミ unit u_default'></div> <div onclick="set_unit('ジータ')" id='ジータ' class='u_ジータ unit u_default'></div> <div onclick="set_unit('ジータ')" id='ジータ' class='u_ジータ unit u_default'></div> <div onclick="set_unit('ペコリーヌ（ニューイヤー）')" id='ペコリーヌ（ニューイヤー）' class='u_ペコリーヌ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('レイ（サマー）')" id='レイ（サマー）' class='u_レイ（サマー） unit u_default'></div> <div onclick="set_unit('レイ')" id='レイ' class='u_レイ unit u_default'></div> <div onclick="set_unit('イノリ（タイムトラベル）')" id='イノリ（タイムトラベル）' class='u_イノリ（タイムトラベル） unit u_default'></div> <div onclick="set_unit('イリヤ（クリスマス）')" id='イリヤ（クリスマス）' class='u_イリヤ（クリスマス） unit u_default'></div> <div onclick="set_unit('シノブ（サマー）')" id='シノブ（サマー）' class='u_シノブ（サマー） unit u_default'></div> <div onclick="set_unit('アヤネ（エクスプローラー）')" id='アヤネ（エクスプローラー）' class='u_アヤネ（エクスプローラー） unit u_default'></div> <div onclick="set_unit('アンナ（サマー）')" id='アンナ（サマー）' class='u_アンナ（サマー） unit u_default'></div> <div onclick="set_unit('ラビリスタ（オーバーロード）')" id='ラビリスタ（オーバーロード）' class='u_ラビリスタ（オーバーロード） unit u_default'></div> <div onclick="set_unit('トモ（ハロウィン）')" id='トモ（ハロウィン）' class='u_トモ（ハロウィン） unit u_default'></div> <div onclick="set_unit('ヒヨリ（サマー）')" id='ヒヨリ（サマー）' class='u_ヒヨリ（サマー） unit u_default'></div> <div onclick="set_unit('クリスティーナ（クリスマス）')" id='クリスティーナ（クリスマス）' class='u_クリスティーナ（クリスマス） unit u_default'></div> <div onclick="set_unit('ビカラ')" id='ビカラ' class='u_ビカラ unit u_default'></div> <div onclick="set_unit('ミフユ（作業服）')" id='ミフユ（作業服）' class='u_ミフユ（作業服） unit u_default'></div> <div onclick="set_unit('シェフィ（ニューイヤー）')" id='シェフィ（ニューイヤー）' class='u_シェフィ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('シズル')" id='シズル' class='u_シズル unit u_default'></div> <div onclick="set_unit('クリスティーナ')" id='クリスティーナ' class='u_クリスティーナ unit u_default'></div> <div onclick="set_unit('イノリ（怪盗）')" id='イノリ（怪盗）' class='u_イノリ（怪盗） unit u_default'></div> <div onclick="set_unit('アンナ（パイレーツ）')" id='アンナ（パイレーツ）' class='u_アンナ（パイレーツ） unit u_default'></div> <div onclick="set_unit('クルミ（クリスマス）')" id='クルミ（クリスマス）' class='u_クルミ（クリスマス） unit u_default'></div> 
+             </div>
+           </div>
+           <div class="panel panel-default">
+             <a data-toggle="collapse" href="#collapse2">
+               <div class="panel-heading leftflex">
+                <div class="midline"></div>
+                <h4 class="panel-title">Middle</h4>
+               </div>
+             </a>
+             <div id="collapse2" class="panel-collapse collapse">
+              <div onclick="set_unit('ミヤコ（クリスマス）')" id='ミヤコ（クリスマス）' class='u_ミヤコ（クリスマス） unit u_default'></div> <div onclick="set_unit('サレン（サラサリア）')" id='サレン（サラサリア）' class='u_サレン（サラサリア） unit u_default'></div> <div onclick="set_unit('ネア')" id='ネア' class='u_ネア unit u_default'></div> <div onclick="set_unit('ツムギ（サマー）')" id='ツムギ（サマー）' class='u_ツムギ（サマー） unit u_default'></div> <div onclick="set_unit('ミミ')" id='ミミ' class='u_ミミ unit u_default'></div> <div onclick="set_unit('ミミ（サマー）')" id='ミミ（サマー）' class='u_ミミ（サマー） unit u_default'></div> <div onclick="set_unit('シノブ')" id='シノブ' class='u_シノブ unit u_default'></div> <div onclick="set_unit('ミミ（ハロウィン）')" id='ミミ（ハロウィン）' class='u_ミミ（ハロウィン） unit u_default'></div> <div onclick="set_unit('シェフィ')" id='シェフィ' class='u_シェフィ unit u_default'></div> <div onclick="set_unit('ウヅキ（デレマス）')" id='ウヅキ（デレマス）' class='u_ウヅキ（デレマス） unit u_default'></div> <div onclick="set_unit('ペコリーヌ（クリスマス）')" id='ペコリーヌ（クリスマス）' class='u_ペコリーヌ（クリスマス） unit u_default'></div> <div onclick="set_unit('クローチェ')" id='クローチェ' class='u_クローチェ unit u_default'></div> <div onclick="set_unit('レイ（ハロウィン）')" id='レイ（ハロウィン）' class='u_レイ（ハロウィン） unit u_default'></div> <div onclick="set_unit('レイ（プリンセス）')" id='レイ（プリンセス）' class='u_レイ（プリンセス） unit u_default'></div> <div onclick="set_unit('シノブ（パイレーツ）')" id='シノブ（パイレーツ）' class='u_シノブ（パイレーツ） unit u_default'></div> <div onclick="set_unit('シズル（バレンタイン）')" id='シズル（バレンタイン）' class='u_シズル（バレンタイン） unit u_default'></div> <div onclick="set_unit('マヒル（レンジャー）')" id='マヒル（レンジャー）' class='u_マヒル（レンジャー） unit u_default'></div> <div onclick="set_unit('マヒル')" id='マヒル' class='u_マヒル unit u_default'></div> <div onclick="set_unit('マヒル（クリスマス）')" id='マヒル（クリスマス）' class='u_マヒル（クリスマス） unit u_default'></div> <div onclick="set_unit('トモ（マジカル）')" id='トモ（マジカル）' class='u_トモ（マジカル） unit u_default'></div> <div onclick="set_unit('ユカリ')" id='ユカリ' class='u_ユカリ unit u_default'></div> <div onclick="set_unit('クリア（フォールン）')" id='クリア（フォールン）' class='u_クリア（フォールン） unit u_default'></div> <div onclick="set_unit('エリコ（サマー）')" id='エリコ（サマー）' class='u_エリコ（サマー） unit u_default'></div> <div onclick="set_unit('ユカリ（クリスマス）')" id='ユカリ（クリスマス）' class='u_ユカリ（クリスマス） unit u_default'></div> <div onclick="set_unit('モニカ')" id='モニカ' class='u_モニカ unit u_default'></div> <div onclick="set_unit('ニノン')" id='ニノン' class='u_ニノン unit u_default'></div> <div onclick="set_unit('ノゾミ（サマー）')" id='ノゾミ（サマー）' class='u_ノゾミ（サマー） unit u_default'></div> <div onclick="set_unit('ノゾミ（クリスマス）')" id='ノゾミ（クリスマス）' class='u_ノゾミ（クリスマス） unit u_default'></div> <div onclick="set_unit('ユカリ（キャンプ）')" id='ユカリ（キャンプ）' class='u_ユカリ（キャンプ） unit u_default'></div> <div onclick="set_unit('ミフユ')" id='ミフユ' class='u_ミフユ unit u_default'></div> <div onclick="set_unit('アキノ＆サレン')" id='アキノ＆サレン' class='u_アキノ＆サレン unit u_default'></div> <div onclick="set_unit('リン（レンジャー）')" id='リン（レンジャー）' class='u_リン（レンジャー） unit u_default'></div> <div onclick="set_unit('ノゾミ（リベレイター）')" id='ノゾミ（リベレイター）' class='u_ノゾミ（リベレイター） unit u_default'></div> <div onclick="set_unit('イリヤ（ニューイヤー）')" id='イリヤ（ニューイヤー）' class='u_イリヤ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('カオリ（サマー）')" id='カオリ（サマー）' class='u_カオリ（サマー） unit u_default'></div> <div onclick="set_unit('イリヤ')" id='イリヤ' class='u_イリヤ unit u_default'></div> <div onclick="set_unit('サレン')" id='サレン' class='u_サレン unit u_default'></div> <div onclick="set_unit('ヨリ（クリスマス）')" id='ヨリ（クリスマス）' class='u_ヨリ（クリスマス） unit u_default'></div> <div onclick="set_unit('アカリ（クリスマス）')" id='アカリ（クリスマス）' class='u_アカリ（クリスマス） unit u_default'></div> <div onclick="set_unit('アンナ')" id='アンナ' class='u_アンナ unit u_default'></div> <div onclick="set_unit('シノブ（ハロウィン）')" id='シノブ（ハロウィン）' class='u_シノブ（ハロウィン） unit u_default'></div> <div onclick="set_unit('ジータ（ウォーロック）')" id='ジータ（ウォーロック）' class='u_ジータ（ウォーロック） unit u_default'></div> <div onclick="set_unit('ユキ（儀装束）')" id='ユキ（儀装束）' class='u_ユキ（儀装束） unit u_default'></div> <div onclick="set_unit('モニカ（カフェ）')" id='モニカ（カフェ）' class='u_モニカ（カフェ） unit u_default'></div> <div onclick="set_unit('リリ（フォールン）')" id='リリ（フォールン）' class='u_リリ（フォールン） unit u_default'></div> <div onclick="set_unit('ミソギ＆ミミ＆キョウカ')" id='ミソギ＆ミミ＆キョウカ' class='u_ミソギ＆ミミ＆キョウカ unit u_default'></div> <div onclick="set_unit('ナナカ（サマー）')" id='ナナカ（サマー）' class='u_ナナカ（サマー） unit u_default'></div> <div onclick="set_unit('プレシア（フォールン）')" id='プレシア（フォールン）' class='u_プレシア（フォールン） unit u_default'></div> <div onclick="set_unit('ミフユ（サマー）')" id='ミフユ（サマー）' class='u_ミフユ（サマー） unit u_default'></div> <div onclick="set_unit('コッコロ')" id='コッコロ' class='u_コッコロ unit u_default'></div> <div onclick="set_unit('アユミ（ワンダー）')" id='アユミ（ワンダー）' class='u_アユミ（ワンダー） unit u_default'></div> <div onclick="set_unit('アユミ')" id='アユミ' class='u_アユミ unit u_default'></div> <div onclick="set_unit('ニノン（ハロウィン）')" id='ニノン（ハロウィン）' class='u_ニノン（ハロウィン） unit u_default'></div> <div onclick="set_unit('チカ（サマー）')" id='チカ（サマー）' class='u_チカ（サマー） unit u_default'></div> <div onclick="set_unit('グレア')" id='グレア' class='u_グレア unit u_default'></div> <div onclick="set_unit('アオイ（作業服）')" id='アオイ（作業服）' class='u_アオイ（作業服） unit u_default'></div> <div onclick="set_unit('モニカ（マジカル）')" id='モニカ（マジカル）' class='u_モニカ（マジカル） unit u_default'></div> <div onclick="set_unit('アカリ（エンジェル）')" id='アカリ（エンジェル）' class='u_アカリ（エンジェル） unit u_default'></div> <div onclick="set_unit('ヨリ（エンジェル）')" id='ヨリ（エンジェル）' class='u_ヨリ（エンジェル） unit u_default'></div> <div onclick="set_unit('コッコロ（儀装束）')" id='コッコロ（儀装束）' class='u_コッコロ（儀装束） unit u_default'></div> <div onclick="set_unit('コッコロ（サマー）')" id='コッコロ（サマー）' class='u_コッコロ（サマー） unit u_default'></div> <div onclick="set_unit('レム')" id='レム' class='u_レム unit u_default'></div> <div onclick="set_unit('ラム')" id='ラム' class='u_ラム unit u_default'></div> <div onclick="set_unit('リン')" id='リン' class='u_リン unit u_default'></div> <div onclick="set_unit('ミツキ（オーエド）')" id='ミツキ（オーエド）' class='u_ミツキ（オーエド） unit u_default'></div> <div onclick="set_unit('ユイ（サマー）')" id='ユイ（サマー）' class='u_ユイ（サマー） unit u_default'></div> <div onclick="set_unit('コッコロ（プリンセス）')" id='コッコロ（プリンセス）' class='u_コッコロ（プリンセス） unit u_default'></div> <div onclick="set_unit('ラビリスタ')" id='ラビリスタ' class='u_ラビリスタ unit u_default'></div> <div onclick="set_unit('ネネカ（ニューイヤー）')" id='ネネカ（ニューイヤー）' class='u_ネネカ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('ヴァンピィ')" id='ヴァンピィ' class='u_ヴァンピィ unit u_default'></div> <div onclick="set_unit('ミツキ')" id='ミツキ' class='u_ミツキ unit u_default'></div> <div onclick="set_unit('ハツネ（サマー）')" id='ハツネ（サマー）' class='u_ハツネ（サマー） unit u_default'></div> <div onclick="set_unit('イリヤ（儀装束）')" id='イリヤ（儀装束）' class='u_イリヤ（儀装束） unit u_default'></div> <div onclick="set_unit('アカリ')" id='アカリ' class='u_アカリ unit u_default'></div> <div onclick="set_unit('ヨリ')" id='ヨリ' class='u_ヨリ unit u_default'></div> <div onclick="set_unit('アン＆グレア')" id='アン＆グレア' class='u_アン＆グレア unit u_default'></div> <div onclick="set_unit('ユイ（儀装束）')" id='ユイ（儀装束）' class='u_ユイ（儀装束） unit u_default'></div> <div onclick="set_unit('カリン（アルケミスト）')" id='カリン（アルケミスト）' class='u_カリン（アルケミスト） unit u_default'></div> <div onclick="set_unit('リン（ハロウィン）')" id='リン（ハロウィン）' class='u_リン（ハロウィン） unit u_default'></div> <div onclick="set_unit('サレン（サマー）')" id='サレン（サマー）' class='u_サレン（サマー） unit u_default'></div> <div onclick="set_unit('キャル（オーバーロード）')" id='キャル（オーバーロード）' class='u_キャル（オーバーロード） unit u_default'></div> <div onclick="set_unit('アユミ（怪盗）')" id='アユミ（怪盗）' class='u_アユミ（怪盗） unit u_default'></div> <div onclick="set_unit('ミツキ（ニューイヤー）')" id='ミツキ（ニューイヤー）' class='u_ミツキ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('ミヤコ（ハロウィン）')" id='ミヤコ（ハロウィン）' class='u_ミヤコ（ハロウィン） unit u_default'></div> 
+             </div>
+           </div>
+           <div class="panel panel-default">
+             <a data-toggle="collapse" href="#collapse3">
+               <div class="panel-heading leftflex">
+                <div class="backline"></div>
+                <h4 class="panel-title">Back</h4>
+               </div>
+             </a>
+             <div id="collapse3" class="panel-collapse collapse"><div onclick="set_unit('アリサ')" id='アリサ' class='u_アリサ unit u_default'></div> <div onclick="set_unit('アン')" id='アン' class='u_アン unit u_default'></div> <div onclick="set_unit('ルゥ')" id='ルゥ' class='u_ルゥ unit u_default'></div> <div onclick="set_unit('マホ（シンデレラ）')" id='マホ（シンデレラ）' class='u_マホ（シンデレラ） unit u_default'></div> <div onclick="set_unit('ネネカ（サマー）')" id='ネネカ（サマー）' class='u_ネネカ（サマー） unit u_default'></div> <div onclick="set_unit('カイザーインサイト')" id='カイザーインサイト' class='u_カイザーインサイト unit u_default'></div> <div onclick="set_unit('ネネカ')" id='ネネカ' class='u_ネネカ unit u_default'></div> <div onclick="set_unit('アオイ（編入生）')" id='アオイ（編入生）' class='u_アオイ（編入生） unit u_default'></div> <div onclick="set_unit('ランファ（サマー）')" id='ランファ（サマー）' class='u_ランファ（サマー） unit u_default'></div> <div onclick="set_unit('キャル（ニューイヤー）')" id='キャル（ニューイヤー）' class='u_キャル（ニューイヤー） unit u_default'></div> <div onclick="set_unit('ミオ（デレマス）')" id='ミオ（デレマス）' class='u_ミオ（デレマス） unit u_default'></div> <div onclick="set_unit('ミサト（サマー）')" id='ミサト（サマー）' class='u_ミサト（サマー） unit u_default'></div> <div onclick="set_unit('ミサト（ニューイヤー）')" id='ミサト（ニューイヤー）' class='u_ミサト（ニューイヤー） unit u_default'></div> <div onclick="set_unit('リノ')" id='リノ' class='u_リノ unit u_default'></div> <div onclick="set_unit('スズナ')" id='スズナ' class='u_スズナ unit u_default'></div> <div onclick="set_unit('スズナ（サマー）')" id='スズナ（サマー）' class='u_スズナ（サマー） unit u_default'></div> <div onclick="set_unit('ホマレ（ニューイヤー）')" id='ホマレ（ニューイヤー）' class='u_ホマレ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('シオリ（レンジャー）')" id='シオリ（レンジャー）' class='u_シオリ（レンジャー） unit u_default'></div> <div onclick="set_unit('シオリ')" id='シオリ' class='u_シオリ unit u_default'></div> <div onclick="set_unit('シオリ（マジカル）')" id='シオリ（マジカル）' class='u_シオリ（マジカル） unit u_default'></div> <div onclick="set_unit('イオ（ノワール）')" id='イオ（ノワール）' class='u_イオ（ノワール） unit u_default'></div> <div onclick="set_unit('イオ')" id='イオ' class='u_イオ unit u_default'></div> <div onclick="set_unit('イオ（サマー）')" id='イオ（サマー）' class='u_イオ（サマー） unit u_default'></div> <div onclick="set_unit('スズメ')" id='スズメ' class='u_スズメ unit u_default'></div> <div onclick="set_unit('スズメ（ニューイヤー）')" id='スズメ（ニューイヤー）' class='u_スズメ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('エミリア')" id='エミリア' class='u_エミリア unit u_default'></div> <div onclick="set_unit('ホマレ')" id='ホマレ' class='u_ホマレ unit u_default'></div> <div onclick="set_unit('カスミ（マジカル）')" id='カスミ（マジカル）' class='u_カスミ（マジカル） unit u_default'></div> <div onclick="set_unit('カスミ')" id='カスミ' class='u_カスミ unit u_default'></div> <div onclick="set_unit('ミソラ')" id='ミソラ' class='u_ミソラ unit u_default'></div> <div onclick="set_unit('リノ（ワンダー）')" id='リノ（ワンダー）' class='u_リノ（ワンダー） unit u_default'></div> <div onclick="set_unit('クルミ（ステージ）')" id='クルミ（ステージ）' class='u_クルミ（ステージ） unit u_default'></div> <div onclick="set_unit('アオイ（キャンプ）')" id='アオイ（キャンプ）' class='u_アオイ（キャンプ） unit u_default'></div> <div onclick="set_unit('ハツネ＆シオリ')" id='ハツネ＆シオリ' class='u_ハツネ＆シオリ unit u_default'></div> <div onclick="set_unit('ミサト')" id='ミサト' class='u_ミサト unit u_default'></div> <div onclick="set_unit('カスミ（サマー）')" id='カスミ（サマー）' class='u_カスミ（サマー） unit u_default'></div> <div onclick="set_unit('ライラエル')" id='ライラエル' class='u_ライラエル unit u_default'></div> <div onclick="set_unit('ナナカ')" id='ナナカ' class='u_ナナカ unit u_default'></div> <div onclick="set_unit('ナナカ（ハロウィン）')" id='ナナカ（ハロウィン）' class='u_ナナカ（ハロウィン） unit u_default'></div> <div onclick="set_unit('ミサキ（ステージ）')" id='ミサキ（ステージ）' class='u_ミサキ（ステージ） unit u_default'></div> <div onclick="set_unit('ユイ（ニューイヤー）')" id='ユイ（ニューイヤー）' class='u_ユイ（ニューイヤー） unit u_default'></div> <div onclick="set_unit('アメス')" id='アメス' class='u_アメス unit u_default'></div> <div onclick="set_unit('キャル（プリンセス）')" id='キャル（プリンセス）' class='u_キャル（プリンセス） unit u_default'></div> <div onclick="set_unit('スズナ（編入生）')" id='スズナ（編入生）' class='u_スズナ（編入生） unit u_default'></div> <div onclick="set_unit('キャル')" id='キャル' class='u_キャル unit u_default'></div> <div onclick="set_unit('クレジッタ')" id='クレジッタ' class='u_クレジッタ unit u_default'></div> <div onclick="set_unit('コッコロ（レンジャー）')" id='コッコロ（レンジャー）' class='u_コッコロ（レンジャー） unit u_default'></div> <div onclick="set_unit('ハツネ')" id='ハツネ' class='u_ハツネ unit u_default'></div> <div onclick="set_unit('ミサキ')" id='ミサキ' class='u_ミサキ unit u_default'></div> <div onclick="set_unit('スズナ（ハロウィン）')" id='スズナ（ハロウィン）' class='u_スズナ（ハロウィン） unit u_default'></div> <div onclick="set_unit('リノ（クリスマス）')" id='リノ（クリスマス）' class='u_リノ（クリスマス） unit u_default'></div> <div onclick="set_unit('ルナ')" id='ルナ' class='u_ルナ unit u_default'></div> <div onclick="set_unit('ユイ（プリンセス）')" id='ユイ（プリンセス）' class='u_ユイ（プリンセス） unit u_default'></div> <div onclick="set_unit('チカ（クリスマス）')" id='チカ（クリスマス）' class='u_チカ（クリスマス） unit u_default'></div> <div onclick="set_unit('スズメ（サマー）')" id='スズメ（サマー）' class='u_スズメ（サマー） unit u_default'></div> <div onclick="set_unit('キャル（サマー）')" id='キャル（サマー）' class='u_キャル（サマー） unit u_default'></div> <div onclick="set_unit('ランファ')" id='ランファ' class='u_ランファ unit u_default'></div> <div onclick="set_unit('アオイ')" id='アオイ' class='u_アオイ unit u_default'></div> <div onclick="set_unit('カリン')" id='カリン' class='u_カリン unit u_default'></div> <div onclick="set_unit('チカ')" id='チカ' class='u_チカ unit u_default'></div> <div onclick="set_unit('マホ（サマー）')" id='マホ（サマー）' class='u_マホ（サマー） unit u_default'></div> <div onclick="set_unit('マホ（エクスプローラー）')" id='マホ（エクスプローラー）' class='u_マホ（エクスプローラー） unit u_default'></div> <div onclick="set_unit('マホ')" id='マホ' class='u_マホ unit u_default'></div> <div onclick="set_unit('ユキ（オーエド）')" id='ユキ（オーエド）' class='u_ユキ（オーエド） unit u_default'></div> <div onclick="set_unit('ユイ')" id='ユイ' class='u_ユイ unit u_default'></div> <div onclick="set_unit('キャル（編入生）')" id='キャル（編入生）' class='u_キャル（編入生） unit u_default'></div> <div onclick="set_unit('ユキ')" id='ユキ' class='u_ユキ unit u_default'></div> <div onclick="set_unit('ユニ')" id='ユニ' class='u_ユニ unit u_default'></div> <div onclick="set_unit('ユニ（聖学祭）')" id='ユニ（聖学祭）' class='u_ユニ（聖学祭） unit u_default'></div> <div onclick="set_unit('キョウカ')" id='キョウカ' class='u_キョウカ unit u_default'></div> <div onclick="set_unit('キョウカ（サマー）')" id='キョウカ（サマー）' class='u_キョウカ（サマー） unit u_default'></div> <div onclick="set_unit('ミサキ（ハロウィン）')" id='ミサキ（ハロウィン）' class='u_ミサキ（ハロウィン） unit u_default'></div> <div onclick="set_unit('キョウカ（ハロウィン）')" id='キョウカ（ハロウィン）' class='u_キョウカ（ハロウィン） unit u_default'></div> <div onclick="set_unit('タマキ（カフェ）')" id='タマキ（カフェ）' class='u_タマキ（カフェ） unit u_default'></div> 
+               <div id="flex"></div>
+             </div>
+           </div>
+          </div>
+        </div>
+    </div>
+
+
+<!--
+    <div class="col-sm-6 midpad">
+      <br>
+      <div id="exTab1" class="pillwidth">
+        <ul class="nav nav-pills nav-justified">
+          <li onclick="set_boss('b1','b1')"><a class="nav-link bosstab" data-toggle="pill" href="#b1">Boss 1</a></li>
+          <li onclick="set_boss('b2','b2')"><a class="nav-link bosstab" data-toggle="pill" href="#b2">Boss 2</a></li>
+          <li onclick="set_boss('b3','b3')"><a class="nav-link bosstab" data-toggle="pill" href="#b3">Boss 3</a></li>
+          <li onclick="set_boss('b4','b4')"><a class="nav-link bosstab" data-toggle="pill" href="#b4">Boss 4</a></li>
+          <li onclick="set_boss('b5','b5')"><a class="nav-link bosstab" data-toggle="pill" href="#b5">Boss 5</a></li>
+          
+          <li onclick="set_boss('boss5en','b5en')"><a class="nav-link bosstab" data-toggle="pill" href="#b5en">Boss 5 Enrage</a></li>
+          
+        </ul>
+        <div class="left_container">
+          <div>
+            <input checked="true" type="checkbox" data-toggle="toggle" id="stage1">
+            <label class="form-check-label" for="stage1">Stage 1</label>
+            <input checked="true" type="checkbox" class="form-check-input" id="stage2">
+            <label class="form-check-label" for="stage2">Stage 2</label>
+            <input checked="true" type="checkbox" class="form-check-input" id="stage3">
+            <label class="form-check-label" for="stage3">Stage 3</label>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div id="b1" class="tab-pane fade">
+            
+            <div class="teambox_center">
+              <div class="teambox">
+                <div class="teambox_container">
+                  <div class="teambox_inner">
+                    <div class="teambox_inner_container">
+                      <div class="charwrapper">
+                        <div class="u_skokkoro b_default"></div>
+                        <div class="uepos ue"></div>
+                        <div class="starpos">
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="nostar"></div>
+                          <div class="nostar"></div>
+                        </div>
+                      </div>
+                      <div class="charwrapper">
+                        <div class="u_christina b_default"></div>
+                        <div class="uepos ue"></div>
+                        <div class="starpos">
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="star"></div>
+                          <div class="nostar"></div>
+                        </div>
+                      </div>
+                      <div class="u_djeeta b_default"></div>
+                      <div class="u_stamaki b_default"></div>
+                      <div class="u_makoto b_default"></div>
+                      <div class="compbox_text">1.70m</div>
+                      <div class="compbox_text">Stage 2</div>
+                      <div class="compbox_text">
+                        <a target="_blank" href="https://discord.com/channels/805006358138585128/910444848555892736/911155749013585931">Timeline</a
+                      </div>
+                      <div class="verified"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div id="b2" class="tab-pane fade">
+
+          </div>
+          <div id="b3" class="tab-pane fade">
+
+          </div>
+          <div id="b4" class="tab-pane fade">
+
+          </div>
+          <div id="b5" class="tab-pane fade">
+
+          </div>
+          
+          <div id="b5en" class="tab-pane fade">
+
+          </div>
+          
+        </div>
+      </div>
+      <br>
+      <p class="support_title teambox_inner">Make sure&nbsp;<strong>TEAM</strong>&nbsp;is selected (not&nbsp;<strong>SUPPORT</strong>) before choosing a boss</p>
+      <br>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<!--
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+-->
+
+</body>
+</html>
