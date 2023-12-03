@@ -1,0 +1,395 @@
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+body{
+  background-color: #181818;
+  color: #FF4C29;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #222831;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.nav-justified .active a,
+.nav-justified .active a:hover{
+  background-color: #D89216;
+  color: #FFFFFF;
+}
+.pillwidth{
+  width: auto;
+}
+
+.teambox_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teambox{
+  margin: auto;
+  padding: 5px;
+  width: 50%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.teambox_inner{
+  background-color:#393E46;
+  border: 1px solid #CDCDCD;
+  margin: auto;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.teambox_inner_selected{
+  background-color:#574320;
+  border: 1px solid #D89216;
+  margin: auto;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+}
+
+.teambox_title{
+  color: #EEEEEE;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.teambox_title_selected{
+  color: #D89216;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.teambox_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.teambox_inner_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teambox_empty{
+  width: 60px;
+  height: 60px;
+  background-image: url("./images/unknown.jpg");
+  border-radius: 6px;
+  background-size: contain;
+  border: 1px solid transparent;
+  display: inline-block;
+  cursor: inherit;
+  margin: 2px; filter: unset;
+}
+
+.support_title{
+  color: #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+}
+.support_active{
+  outline: 1px solid #FFD369;
+  margin: 0;
+}
+
+.vl {
+  border-left: 2px solid #CCCCCC;
+  height: 60px;
+}
+.box_pad{
+  padding: 10px;
+}
+
+.big_pad{
+  padding-top: 50px;
+}
+
+.panel{
+  width: 900px;
+}
+.panel-group .panel .panel-heading{
+  border-radius: 0px;
+}
+.panel-group .panel{
+  border-radius: 0px;
+}
+
+.panel-heading{
+  background-color: #424242;
+  color: #eeeeee;
+}
+.panel-collapse{
+  background-color: #212121;
+  padding: 3px;
+}
+.panel-title{
+  margin-left: 10px;
+  display: inline-block;
+}
+.center_panel{
+    display: flex;
+    justify-content: center;
+}
+.leftflex{
+  display: flex;
+  justify-content: left;
+}
+.midpad{
+  margin-left: 50px;
+}
+
+.clear_button{
+  color: #eeeeee;
+  background-color: #667283;
+  border: 1px solid #eeeeee;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: fit-content;
+  border-radius: 4px;
+  font-size: small;
+  display: inline-block;
+}
+.frontline{
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-image: url("./images/position_front.png");
+  display: inline-block;
+}
+.midline{
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-image: url("./images/position_middle.png");
+  display: inline-block;
+}
+.backline{
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-image: url("./images/position_back.png");
+  display: inline-block;
+}
+.center_container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right_container{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.unit{
+  cursor:pointer;
+}
+
+.u_select{
+  opacity: 0.3;
+  width: 50px;
+  height: 50px;
+  background-size:670px;
+}
+.u_default{
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  background-size:670px;
+}
+
+.b_default{
+  width: 60px;
+  height: 60px;
+  background-size: 804px;
+}
+
+.inactive_set{
+  opacity: 0.3;
+}
+
+/* pills styling */
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+div#exTab1.container {
+    padding-bottom: 64px;
+}
+li.active {
+    background: #D89216;
+}
+.nav-pills > li > a.bosstab {
+    color: #D89216;
+    border: none;
+    background-color: #424242;
+}
+.nav-pills > li > a:hover {
+    color: #D89216;
+    border: none;
+    background-color: white;
+}
+.nav-pills > li.active > a.bosstab {
+    background-color: #D89216;
+    color: white;
+    border: none;
+}
+
+.form-check-label{
+  color: white;
+}
+
+.leftjust{
+  align-content: left;
+}
+.left_container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.rightjust{
+  align-content: right;
+}
+.right_container{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.verified{
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-image: url("./images/verified.png");
+  display: inline-block;
+}
+.notverified{
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-image: url("./images/not_verified.png");
+  display: inline-block;
+}
+
+.charwrapper{
+  position: relative;
+}
+
+.uepos{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.starpos{
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  display: table-row;
+}
+
+
+.ue{
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-image: url("./images/equip.png");
+}
+.star{
+  width: 8px;
+  height: 8px;
+  background-size: contain;
+  background-image: url("./images/star.png");
+  display: table-cell;
+}
+.nostar{
+  width: 8px;
+  height: 8px;
+  background-size: contain;
+  background-image: url("./images/star_disabled.png");
+  display: table-cell;
+}
+
+.compbox_text{
+  color: #EEEEEE;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.s3_text{
+  color: #d57388;
+  font-weight: bold;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  white-space: nowrap;
+}
+.s2_text{
+  color: #80a8d7;
+  font-weight: bold;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  white-space: nowrap;
+}
+.s1_text{
+  color: #a7c199;
+  font-weight: bold;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.team_input{
+  background:transparent;
+  border:none;
+  width: 90px;
+}
+input.team_input:focus {
+    outline-width: 0;
+}

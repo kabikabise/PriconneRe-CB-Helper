@@ -32,6 +32,30 @@ function sheetresult(results){
   data = results.data
 }
 
+$(document).ready(function () {
+    $('#checkbox1').change(function () {
+        if (!this.checked) 
+        //  ^
+           $('#team1-of').fadeOut('fast');
+        else 
+            $('#team1-of').fadeIn('fast');
+    });
+    $('#checkbox2').change(function () {
+        if (!this.checked) 
+        //  ^
+           $('#team2-of').fadeOut('fast');
+        else 
+            $('#team2-of').fadeIn('fast');
+    });
+    $('#checkbox3').change(function () {
+        if (!this.checked) 
+        //  ^
+           $('#team3-of').fadeOut('fast');
+        else 
+            $('#team3-of').fadeIn('fast');
+    });
+});
+
 function set_boss(bossname, bossid){
   var initbox = "<br><div class=\"teambox_center\"><div class=\"teambox\"><div class=\"teambox_container\"><div class=\"teambox_inner\"><div class=\"teambox_inner_container\">";
   var databox = 0;
